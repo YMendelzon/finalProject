@@ -12,11 +12,12 @@ public class ClientController : ControllerBase
 {
     IBlBabyService BabyService;
     IMotherBl blmother;
-
+    IRoomTypeBl blRoomType;
     public ClientController(BLManager bl)
     {
         this.blmother = bl.Mothers;
         this.BabyService = bl.BabyService;
+        this.blRoomType = bl.RoomType;
     }
 
 
@@ -46,4 +47,9 @@ public class ClientController : ControllerBase
         return blmother.GetMotherList();
     }
 
+    [HttpGet("getRoomTypes")]
+    public List<RoomType> GetRoomTypeList()
+    {
+        return blRoomType.GetRoomTypeList();
+    }
 }
