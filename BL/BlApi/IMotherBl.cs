@@ -6,5 +6,4 @@ namespace BL.BlApi;
 public interface IMotherBl
 {
     public List<Mother> GetMotherList();
-
 }
